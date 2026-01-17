@@ -1,0 +1,32 @@
+.venv/
+.env
+__pycache__/
+*.py[cod]
+*.so
+*.dll
+
+# Data and large artifacts
+train/
+validation/
+checkpoints/
+*.pkl
+*.pt
+*.bin
+*.h5
+*.onnx
+*.npz
+*.npy
+*.zip
+*.gz
+*.7z
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Logs & caches
+*.log
+*.tmp
+*.cache/

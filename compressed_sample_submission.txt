@@ -1,0 +1,40 @@
+# Compressed X Predictions (from sample_submission.csv)
+# Copy the string below and use in your Kaggle notebook
+# To decompress: x_preds = list(map(float, zlib.decompress(base64.b64decode(compressed_x)).decode().split(',')))
+
+compressed_x = '''
+eJztwjENAAAAAqBCHvZPZwhfBk0BAAAAAAAAAAAAAHgMw+4x+Q==
+'''
+
+# Compressed Y Predictions (from sample_submission.csv)
+# Copy the string below and use in your Kaggle notebook
+# To decompress: y_preds = list(map(float, zlib.decompress(base64.b64decode(compressed_y)).decode().split(',')))
+
+compressed_y = '''
+eJztwjENAAAAAqBCHvZPZwhfBk0BAAAAAAAAAAAAAHgMw+4x+Q==
+'''
+
+# Complete Kaggle Notebook Code (SAMPLE SUBMISSION)
+# ================================================
+
+import zlib, base64
+
+# Paste compressed strings (from sample_submission.csv)
+compressed_x = 'eJztwjENAAAAAqBCHvZPZwhfBk0BAAAAAAAAAAAAAHgMw+4x+Q=='
+compressed_y = 'eJztwjENAAAAAqBCHvZPZwhfBk0BAAAAAAAAAAAAAHgMw+4x+Q=='
+
+# Decompress
+x_preds = list(map(float, zlib.decompress(base64.b64decode(compressed_x)).decode().split(',')))
+y_preds = list(map(float, zlib.decompress(base64.b64decode(compressed_y)).decode().split(',')))
+
+print(f'Loaded {len(x_preds)} predictions from sample_submission.csv')
+print(f'First x: {x_preds[0]}')
+print(f'First y: {y_preds[0]}')
+
+# Now you can use x_preds and y_preds to create your submission
+# Example:
+# submission = pd.DataFrame({
+#     'id': test_ids,  # your test IDs
+#     'x': x_preds,
+#     'y': y_preds
+# })
